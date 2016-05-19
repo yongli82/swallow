@@ -13,3 +13,5 @@ class AboutPage(generic.TemplateView):
     template_name = "about.html"
 
 
+class AdminHomePage(generic.TemplateView):
+    template_name = "admin/home.html"
