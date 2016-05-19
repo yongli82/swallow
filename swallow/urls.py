@@ -16,6 +16,14 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+import accounts.urls
+import profiles.urls
+from . import views
+
+
 urlpatterns = [
+    url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^users/', include(profiles.urls, namespace='profiles')),
+    url(r'^', include(accounts.urls, namespace='accounts')),
 ]

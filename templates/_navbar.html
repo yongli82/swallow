@@ -1,0 +1,6 @@
+<li {% if active_link == "home" %}class="active"{% endif %}><a href="{% url 'home' %}">首页</a></li>
+<li {% if active_link == "book" %}class="active"{% endif %}><a href="{% url 'book' %}">书籍</a></li>
+<li {% if active_link == "site" %}class="active"{% endif %}><a href="{% url 'site' %}">网站</a></li>
+<li {% if active_link == "column" %}class="active"{% endif %}><a href="{% url 'column' %}">专栏</a></li>
+
+<li {% if active_link == "about" %}class="active"{% endif %}><a href="{% url 'about' %}">关于</a></li> 
