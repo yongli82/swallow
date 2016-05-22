@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "API文档" %}{% endblock %}
+
+
+{% block content %}
+<h2>API</h2>
+<p>
+    需要权限的API请示在AJAX请求的Header中传输:
+    <span class="code prettyprint">HTTP_AUTHORIZATION: Token 实际Token</span>
+</p>
+<p>
+    参考: <a href="http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication">
+            Token Authentication
+        </a> 
+</p>
+<ul>
+    <li><a href="/api/docs/">Swagger API文档</a></li>
+</ul>
+{% endblock content%}

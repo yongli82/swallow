@@ -1,0 +1,375 @@
+html body {
+  font-family: '微软雅黑', '黑体', '宋体';
+  font-size: 12px;
+}
+/**
+ * 着重色 - 红色
+ */
+.red {
+  color: #ff0000;
+}
+.blue {
+  color: #0088cc;
+}
+.green {
+  color: #157522;
+}
+/**
+ * 字体加粗
+ */
+.strong {
+  font-weight: bolder;
+}
+/**
+ * 文字居中
+ */
+.align-center,
+.no-data {
+  text-align: center;
+}
+.navbar .navbar-inner .logo {
+  position: absolute;
+  width: 7.3em;
+  text-align: center;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.navbar-inner a.logo:hover {
+  font-size: 1.5em;
+  text-shadow: 0px 0px 1px #333;
+}
+.app .app-header .navbar .navbar-inner {
+  border-radius: 0;
+  background-color: #fbfbfb;
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff5f5f5', GradientType=0);
+}
+.navbar .navbar-inner .nav {
+  position: absolute;
+  left: 13.4em;
+}
+/**
+ * 模块内部小标题
+ */
+.panel .body .title {
+  padding: 0.5em 1em;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #dddddd;
+}
+
+/**
+* 下拉框
+*/
+.select-small {
+    width: 98px;
+}
+
+/**
+ * 表单底部btns
+ */
+.form div.form-buttons {
+  padding-left: 180px;
+}
+/**
+ * 表格底部合计等
+ */
+.table tfoot tr {
+  font-weight: bold;
+  font-style: italic;
+}
+.table tfoot tr td.tfoot-label:after {
+  content: '：';
+}
+/**
+ * 含图标的table列，文本对齐
+ */
+.app .table tr td .align-txt-tb-field {
+  display: block;
+  margin: 0;
+  padding-left: 2em;
+  text-align: left;
+}
+/**
+ * 表单式文本排列
+ */
+.controls .f-field-txt {
+  display: block;
+  padding-top: 5px;
+}
+/**
+ * 链接无效果
+ */
+a.no-hover,
+a.no-hover:hover {
+  color: #000000;
+  text-decoration: none;
+  cursor: default;
+}
+/**
+ * 列表多个操作项排列
+ */
+.a-toolbar a {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+/**
+ * 横排自适应宽度列表
+ * ------------------
+ * 例：合同基本信息
+ */
+.info-field {
+  list-style: none;
+}
+.info-field li {
+  float: left;
+  padding: 0.5em 0;
+  margin-right: 2em;
+}
+.info-field li span:after {
+  content: '：';
+}
+.info-field li strong {
+  color: #666666;
+}
+.alert-info .info-field {
+  margin: 0;
+}
+.alert-info .info-field li {
+  float: none;
+  display: inline-block;
+}
+.alert-info .info-field li a.btn,
+.alert-info .info-field li button {
+  margin-right: 0.5em;
+}
+/**
+ * 无序列表 - 行内显示
+ * -------------------
+ * 例：暂停团购的团购号列表
+ */
+.inline-list {
+  float: left;
+  margin: 0;
+  list-style: none;
+}
+.inline-list li {
+  float: left;
+  padding-right: 20px;
+}
+.inline-list li input,
+.inline-list li label {
+  float: left;
+}
+.inline-list li input {
+  margin-right: 5px;
+}
+/**
+ * 有序日期表
+ * ----------
+ * 例：Oracle 凭证数据明细
+ */
+.date-list {
+  margin: 0;
+  list-style: none;
+  border-left: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.date-list li {
+  float: left;
+}
+.date-list li .date,
+.date-list li .content {
+  display: block;
+  text-align: center;
+  width: 8em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.date-list li .date {
+  background-color: #f2f2f2;
+}
+/**
+ * 表格 caption
+ * ------------
+ * 例：Oracle 凭证数据明细
+ */
+.tb-caption {
+  margin-bottom: 10px;
+}
+/**
+ * 表单
+ */
+.colon:after,
+.label-colon.alert span:after,
+.label-colon .control-group .control-label:after {
+  content: '：';
+}
+.control-label .star {
+  display: inline-block;
+  height: 10px;
+  line-height: 18px;
+  padding: 0 2px;
+}
+/**
+ * 弹出框 
+ */
+.modal .modal-body {
+  /**
+         * 表格
+         */
+
+  /**
+         * 应付款参数中的备注
+         */
+
+  /**
+         * 信息提示
+         */
+
+}
+.modal .modal-body .bordered {
+  border: 1px solid #dddddd;
+}
+.modal .modal-body .bordered th,
+.modal .modal-body .bordered td {
+  border-right: 1px solid #dddddd;
+  text-align: center;
+}
+.modal .modal-body .bordered th:last-child,
+.modal .modal-body .bordered td:last-child {
+  border-right: none;
+}
+.modal .modal-body .info {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+  color: #666666;
+  padding: 1em;
+}
+.modal .modal-body .info b {
+  display: block;
+  margin-bottom: 1em;
+}
+.modal .modal-body .dialog-info-container {
+  text-align: left;
+}
+.modal .modal-body .dialog-info-container .dialog-info-ico {
+  float: left;
+  margin: 8px 12px 8px 0;
+}
+.modal .modal-body .dialog-info-container .dialog-info-content {
+  margin-left: 60px;
+  padding-top: 15px;
+  line-height: 1.8em;
+}
+.modal .modal-body .dialog-info-container .dialog-ico-success {
+  width: 43px;
+  height: 43px;
+  background: url(img/success-ico.png) no-repeat center center;
+}
+.modal .modal-body .dialog-info-container .dialog-ico-warning {
+  width: 42px;
+  height: 40px;
+  background: url(img/warning-ico.png) no-repeat center center;
+}
+.modal .modal-body .dialog-info-container .dialog-ico-error {
+  width: 42px;
+  height: 45px;
+  background: url(img/error-ico.png) no-repeat center center;
+}
+/**
+ * 复选框横排列表
+ */
+.alert-info label {
+  margin-right: 1em;
+}
+/**
+ * 表格横向滚动条
+ */
+.tb-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.tb-wrapper .table {
+  table-layout: fixed;
+}
+.tb-wrapper .table tr.active td {
+  background-color: #fff9b8;
+}
+/**
+ * 专用样式
+ * --------
+ * 合同详情页的支付模版
+ */
+.app .panel .body .alert.pay-plan-template {
+  position: fixed;
+  top: 0;
+  right: 0.5em;
+  width: 550px;
+  height: 350px;
+  z-index: 1030;
+  overflow: auto;
+  border-radius: 0.5em;
+}
+.table tr td.settle {
+  min-width: 45px;
+  min-height: 45px;
+  background: url(img/settle.png) no-repeat left top;
+}
+.app .finance-form .control-group {
+  float: left;
+  width: 330px;
+}
+.app .finance-form .control-label {
+  width: 110px;
+}
+.app .finance-form .controls {
+  margin-left: 110px;
+  width: 220px;
+}
+/**
+ * 专用样式
+ * -------
+ * 应开票
+ */
+.table tr td .light-red {
+  background: url(img/light-red.png) no-repeat left top;
+}
+.table tr td .light-green {
+  background: url(img/light-green.png) no-repeat left top;
+}
+.table tr td .light-yellow {
+  background: url(img/light-yellow.png) no-repeat left top;
+}
+
+.pagination * {
+  display: inline-block;
+  vertical-align: top;
+}
+.pagination > * {
+  margin-right: 10px;
+}
+.pagination .text {
+  padding: 5px;
+}
+
+.bar {
+    height: 18px;
+    background: green;
+}
+
+.even{
+  background-color: #F2F3F5;
+}
+
+
+

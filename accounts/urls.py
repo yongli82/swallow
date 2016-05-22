@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from django.conf.urls import url
+from django.conf.urls import url,include
 
 from . import views
 
@@ -17,4 +17,9 @@ urlpatterns = [
         name='password-reset-done'),
     url(r'^password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$$', views.PasswordResetConfirmView.as_view(),  # NOQA
         name='password-reset-confirm'),
+]
+
+import api
+urlpatterns += [
+    url(r'^api/', include(api.router.urls)),
 ]

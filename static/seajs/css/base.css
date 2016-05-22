@@ -1,0 +1,135 @@
+﻿/* base css*/
+.btn-fs-normal:hover, .btn-fs-normal:focus, .btn-fs-normal[disabled] {
+	background-color: #00b5e5;
+	background-position: 0 -30px;
+}
+.btn-fs-normal:active {
+	background-color: #1495b7;
+}
+
+.btn-fs-normal {
+	background-image: linear-gradient(to bottom,#00a1cb,#00a1cb);
+	background-color: #00a1cb;
+	text-align: center;
+	padding: 4px 4px;
+        font-family: "Microsoft YaHei","微软雅黑","黑体","宋体";
+}
+
+.btn-fs-default {
+	background-image: linear-gradient(to bottom, #e9e9e9, #e9e9e9);
+	background-color: #e9e9e9;
+	text-align: center;
+	padding: 4px 4px;
+        font-family: "Microsoft YaHei","微软雅黑","黑体","宋体";
+        color: #333333;
+}
+
+.btn-fs-default:hover, .btn-fs-default:focus, .btn-fs-default[disabled] {
+	background-color: #fbfbfb;
+	background-position: 0 -30px;
+}
+
+.btn-fs-default:active {
+	background-color: #e4e4e4;
+}
+.btn-fs-lg {
+        width: 120px;
+}
+
+.btn-fs-mid {
+	width: 110px;
+}
+
+.btn-fs-sm {
+	width: 100px;
+}
+
+.btn-fs-xs {
+	width: 70px;
+}
+
+.number-char {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+.section-title h4 {
+	font-size: 18px;
+}
+
+#result-info span.number-char{
+  color: #FF6600;
+  font-weight: bolder; 
+}
+
+.btn .glyphicon {
+	padding-right: 6px;
+}
+
+.warn-msg.submit-msg {
+	font-size: 14px;
+	color: #cc0000;
+	display: none;
+	position: relative;
+        top: -25px;
+        right: -670px;
+	font-weight: bold;
+}
+
+.alert.alert-info {
+	height: 32px;
+}
+.modal-header {
+	background-color: #f2f2f2;
+	padding: 2px 15px;
+}
+
+.modal-footer {
+	padding: 8px 15px;
+        background-color: white;
+        border-top: 0;
+}
+
+.modal-lg {
+        width: 500px;
+}
+
+.modal-sm {
+	width: 350px;
+}
+
+.modal-backdrop.fade.in {
+	opacity: .2;
+}
+
+    
+#relation-result {
+        width: 700px;
+        margin-left: -350px;
+        padding: 10px;
+        padding-top: 0;
+}
+
+#relation-result .modal-header {
+        background-color: white;
+        border-bottom: 0;
+        padding: 0;
+}
+
+#relation-result .modal-header .close{
+        position: relative;
+        z-index:1060;
+}
+
+#relation-result .modal-body {
+        padding: 0;
+        overflow-y: quto;
+        overflow-x: hidden;
+        width: 702px;
+}
+
+.auto-break{
+    word-break:break-all;
+    word-wrap:break-word;
+}
+/* base css*/

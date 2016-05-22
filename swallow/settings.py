@@ -31,6 +31,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# Authentication Settings
+AUTH_USER_MODEL = 'authtools.User'
+LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
+LOGIN_URL = reverse_lazy("accounts:login")
 
 # Application definition
 
@@ -47,6 +51,12 @@ INSTALLED_APPS = (
     'profiles',
     'accounts',
     'easy_thumbnails',
+    'viewsets',
+    'events',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_docs',
+    'rest_framework_swagger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -131,10 +141,6 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-# Authentication Settings
-AUTH_USER_MODEL = 'authtools.User'
-LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
-LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
 
@@ -151,3 +157,46 @@ THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
 # EMAIL_HOST = 'localhost'
 # EMAIL_PORT = 1025
 # DEFAULT_FROM_EMAIL = 'Spadger <spadger@example.com>'
+
+import logger
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_RENDERER_CLASSES': (
+        #'rest_framework.renderers.JSONRenderer',
+        'swallow.customise_rest_framework.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+    'TEST_REQUEST_RENDERER_CLASSES': (
+        #'rest_framework.renderers.JSONRenderer',
+        'swallow.customise_rest_framework.JSONRenderer',
+        'rest_framework.renderers.TemplateHTMLRenderer',
+        'rest_framework.renderers.MultiPartRenderer',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'swallow.customise_rest_framework.AllDjangoFilterBackend',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'swallow.customise_rest_framework.PageNumberPagination',
+    'PAGE_SIZE': 20,
+    #"EXCEPTION_HANDLER": "checknow.customise_rest_framework.customise_exception_handler",
+}
+
+
+# SWAGGER_SETTINGS = {
+#     'api_path': '/',
+#     'is_authenticated': False,
+#     'is_superuser': False,
+#     'permission_denied_handler': 'django.contrib.auth.views.login',
+# }
+

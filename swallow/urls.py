@@ -19,12 +19,24 @@ from django.contrib import admin
 import accounts.urls
 import profiles.urls
 from . import views
-
+from events.views import url_router as event_urls
+from django.views.generic.base import TemplateView
+import accounts.api
+import events.api
 
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^admin$', views.AdminHomePage.as_view(), name='admin_home'),
+    url(r'^events/', include(event_urls, namespace='events')),
     url(r'^administrator/', include(admin.site.urls)),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
-    url(r'^', include(accounts.urls, namespace='accounts')),
+    url(r'^accounts/', include(accounts.urls, namespace='accounts')),
+    url(r'^docs/', include('rest_framework_docs.urls')),
+    url(r'^api/accounts/', include(accounts.api.router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/docs/', include('rest_framework_swagger.urls', namespace='rest_framework_swagger')),
+    url(r'^api/$', TemplateView.as_view(template_name="api_index.html"), name='api_index'),
+    url(r'^address/$', TemplateView.as_view(template_name="events/address_list.html")),
+    url(r'^api/e/', include(events.api.router.urls)),
+    url(r'^react/$', TemplateView.as_view(template_name="react.html")),
 ]

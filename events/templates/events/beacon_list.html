@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}{{ block.super }}{{ view.title }}{% endblock title %}
+{% block meta_title %}{{ block.super }}{{ view.title }}{% endblock meta_title %}
+
+{% block left_panel %}
+    {% include "left-menu.html" %}
+{% endblock %}
+
+{% block main %}
+    <a href="/page/event/beacon/create/"  class="btn btn-primary">新增iBeacon设备</a>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" >
+            <thead>
+            <tr>
+                <th>活动Id</th>
+                <th>活动名称</th>
+                <th>活动地址</th>
+                <th>活动开始时间</th>
+                <th>活动结束时间</th>
+                <th>设备UUID</th>
+                <th>设备生效时间</th>
+                <th>设备失效时间</th>
+                <th>描述</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ibeacon in beacon_list %}
+                <tr>
+                    <td>{{ ibeacon.event.id|default:'' }}</td>
+                    <td>{{ ibeacon.event.title|default:'' }}</td>
+                    <td>{{ ibeacon.event.address.title|default:'' }}</td>
+                    <td>{{ ibeacon.event.event_begin_time|date:"Y-m-d H:i:s"  }}</td>
+                    <td>{{ ibeacon.event.event_end_time|date:"Y-m-d H:i:s"  }}</td>
+                    <td>{{ ibeacon.ibeacon|default:'' }}</td>
+                    <td>{{ ibeacon.ibeacon_begin_time|date:"Y-m-d H:i:s"  }}</td>
+                    <td>{{ ibeacon.ibeacon_end_time|date:"Y-m-d H:i:s"  }}</td>
+                    <td>{{ ibeacon.description|default:'' }}</td>
+                    <td style="min-width: 150px;">
+                        <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                          <a href="/page/event/beacon/detail/{{ ibeacon.id }}"  class="btn btn-primary">详细</a>
+                          <a href="/page/event/beacon/update/{{ ibeacon.id }}"  class="btn btn-success">编辑</a>
+                          <a href="/page/event/beacon/delete/{{ ibeacon.id }}"  class="btn btn-warning">删除</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if page_obj %}
+        {% include "pagination.html" %}
+    {% endif %}
+
+{% endblock main %}

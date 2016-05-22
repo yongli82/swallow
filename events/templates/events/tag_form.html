@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}{{ view.title }}{% endblock title %}
+{% block meta_title %}{{ block.super }}{{ view.title }}{% endblock meta_title %}
+
+{% block left_panel %}
+    {% include "left-menu.html" %}
+{% endblock %}
+
+{% block main %}
+     {% crispy form %}
+{% endblock main %}

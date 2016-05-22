@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}{{ block.super }}{{ view.title }}{% endblock title %}
+{% block meta_title %}{{ block.super }}{{ view.title }}{% endblock meta_title %}
+
+{% block left_panel %}
+    {% include "left-menu.html" %}
+{% endblock %}
+
+{% block main %}
+    <div class="form-horizontal">
+        {% for field in form %}
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{ field.label }}</label>
+
+                <div class="col-sm-10">
+                    <span class="form-control">{{ field.value|default:"" }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <a class="btn btn-primary" href={{ view.success_url }}>返回列表</a>
+{% endblock main %}

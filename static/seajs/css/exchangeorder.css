@@ -1,0 +1,127 @@
+#not-passed-reason-selector {
+    display: none;
+}
+
+#select-all-pageinfo {
+    display: none;
+}
+
+#query-status-info {
+    display: none;
+    margin-bottom: 10px;
+}
+
+#select-cur-pageinfo {
+    display: none;
+}
+
+th.fs.id, td.fs.id,
+th.fs.date, td.fs.date,
+th.fs.customer-name, td.fs.customer-name,
+th.fs.status, td.fs.status,
+th.fs.bank-account, td.fs.bank-account,
+th.fs.memo, td.fs.memo td.fs.shop-id{
+    text-align: left;
+}
+
+th.fs.bank-account, td.fs.bank-account { 
+    text-align: center;
+}
+
+th.fs.amount, td.fs.amount{
+    text-align: right;
+}
+
+td.no-records{ 
+    text-align: center;
+}
+
+.modal-backdrop.customize {
+    z-index: 5;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#_alert {
+    z-index: 6;
+}
+
+
+#loading {
+    position:fixed;
+    width:180px;
+    left:50%;
+    top:50%;
+    margin-left:-90px;
+    margin-top:-20px;
+    font-size:16px;
+    font-weight:bold;
+    font-family:"Microsoft YaHei";
+    line-height:1.5;
+    text-align:center;
+    z-index:5;
+}
+
+/* from bootstrap */             
+#loading.alert {
+    padding:8px 35px 8px 14px;
+    margin-bottom:20px;
+    color:#c09853;
+    text-shadow:0 1px 0 rgba(255,255,255,0.5);
+    /*background:url(http://i1.dpfile.com/ba/group-platform/page/ajax-loader.gif) no-repeat left center;*/
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+/* from bootstrap */
+
+#import-refund .import-label {
+    float: left;
+    width: 80px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+#import-refund .input-append {
+    width: 320px;
+    position: relative;
+    top: -30px;
+}
+
+.modal-body .import-file {
+    position: relative;
+    opacity: 0;
+    width: 320px;
+    z-index: 15;
+}
+
+.uploader {
+    position: relative;
+    width: 320px;
+    overflow: hidden;    
+}
+
+.result-table { 
+    width: 470px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-table th{
+    width: 150px;
+}
+
+.result-table td{
+    word-break: break-all;
+}
+
+.fail-msg {
+    color: #CC0000;
+}
+
+.success-result span.number-char{
+    color: #F60;
+    font-weight: bolder;
+}
+

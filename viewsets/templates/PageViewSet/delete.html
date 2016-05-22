@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}{{ block.super }}{{ view.title }}{% endblock title %}
+{% block meta_title %}{{ block.super }}{{ view.title }}{% endblock meta_title %}
+
+{% block left_panel %}
+    {% include "left-menu.html" %}
+{% endblock %}
+
+{% block main %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>你确定要删除记录"{{ object }}"吗?</p>
+    <input class="btn btn-lg btn-primary" type="submit" value="确定" />
+    <a class="btn btn-info" href={{ view.success_url }}>取消</a>
+</form>
+{% endblock main %}
